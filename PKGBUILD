@@ -4,8 +4,8 @@ pkgname=(
     qt6-qtmultimedia-gstreamer
 )
 pkgbase=qt6-qtmultimedia
-pkgver=6.9.2
-pkgrel=1
+pkgver=6.10.0
+pkgrel=2
 pkgdesc="Classes for audio, video, radio and camera functionality"
 arch=('x86_64')
 url="https://www.qt.io"
@@ -36,7 +36,7 @@ makedepends=(
     'vulkan-headers'
 )
 source=(git+https://code.qt.io/qt/${pkgbase#*-}#tag=v${pkgver})
-sha256sums=(e0c16079d04cf80c418f487defbc3c388d1eabf93af86c6af9a88f139fde5072)
+sha256sums=(a48376d0219435d27a0bbe22d3e8451b12f89bed2c88a404282f9293fa85cd2a)
 
 build() {
     cd ${pkgbase#*-}
@@ -74,7 +74,7 @@ package_qt6-qtmultimedia() {
     rm -r ${pkgdir}/usr/include/qt6/Qt{FFmpeg,Gstreamer}MediaPluginImpl \
           ${pkgdir}/usr/lib64/cmake/Qt6{FFmpeg,Gstreamer}MediaPluginImplPrivate \
           ${pkgdir}/usr/lib64/libQt6{FFmpeg,Gstreamer}MediaPluginImpl.a \
-          ${pkgdir}/usr/lib64/qt6/metatypes/qt6{ffmpeg,gstreamer}mediapluginimplprivate_release_metatypes.json \
+          ${pkgdir}/usr/lib64/qt6/metatypes/qt6{ffmpeg,gstreamer}mediapluginimplprivate_metatypes.json \
           ${pkgdir}/usr/lib64/qt6/mkspecs/modules/qt_lib_{ffmpeg,gstreamer}mediapluginimpl_private.pri \
           ${pkgdir}/usr/lib64/qt6/modules/{FFmpeg,Gstreamer}MediaPluginImplPrivate.json
 }
